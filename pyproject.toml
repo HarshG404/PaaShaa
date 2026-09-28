@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paashaa"
+version = "2.0.0"
+description = "PaaShaa - local desktop password vault with OTP-protected access and password-change reminders"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = ["cryptography>=42.0"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License",
+               "Topic :: Security", "Environment :: X11 Applications"]
+
+[project.optional-dependencies]
+photo = ["pillow>=10.0"]
+keyring = ["keyring>=24.0"]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.gui-scripts]
+paashaa = "paashaa.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["paashaa*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 140
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I"]
+ignore = ["E501", "E701", "E702", "E731", "E741", "B008"]

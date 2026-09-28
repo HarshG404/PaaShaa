@@ -1,0 +1,3 @@
+cryptography>=42.0
+pillow>=10.0        # optional: JPG/PNG profile photos
+keyring>=24.0       # optional: OS keyring for the vault key (PAASHAA_USE_KEYRING=1)

@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.idea/
+.vscode/
+# never commit secrets or vault data
+secret.key
+*.db
+*.db-wal
+*.db-shm
+*.psbak
+.env
